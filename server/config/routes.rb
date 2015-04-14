@@ -53,4 +53,11 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  
+  #AGREGADO PARA USAR EL API DE RAILS
+  namespace :api do
+    namespace :v1 do
+      resources :users, except: [:new, :edit]
+    end
+  end
 end
