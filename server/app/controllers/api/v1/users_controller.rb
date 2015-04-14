@@ -5,7 +5,10 @@ class Api::V1::UsersController < ApplicationController
 
   def index
     @users = User.all
-    respond_with @users
+        respond_to do |format|
+      format.html
+      format.json { render json: @users }
+    end
   end
 
   def show
